@@ -1,0 +1,99 @@
+velar@sofiav22 MINGW64 ~
+$ git config --global user.name "[Sofía Velardiez]"
+
+velar@sofiav22 MINGW64 ~
+$ git config --global user.email "[velardiezsofia@gmail.com]"
+
+velar@sofiav22 MINGW64 ~
+$ git config --global color.ui auto
+
+velar@sofiav22 MINGW64 ~
+$ export PS1= '\[\033[1;31m\]\u@\h\w\[\033[0m\]\$'
+bash: export: `\[\033[1;31m\]\u@\h\w\[\033[0m\]\$': not a valid identifier
+export PS1='\[\033[1;31m\]\u@\h\w\[\033[0m\]\$'
+velar@sofiav22~$cd git
+velar@sofiav22~/git$mkdir libro
+mkdir: cannot create directory ‘libro’: File exists
+velar@sofiav22~/git$cd libro
+velar@sofiav22~/git/libro$git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+velar@sofiav22~/git/libro$touch fichero.txt
+velar@sofiav22~/git/libro$mk fichero.txt
+bash: mk: command not found
+velar@sofiav22~/git/libro$echo "Capitulo 1: Introduccion a Git" >> fichero.txt
+velar@sofiav22~/git/libro$echo "Capitulo 2: Flujo de trabajo básico" >> fichero.txt
+velar@sofiav22~/git/libro$echo "Capitulo 3: Repositorios remotos" >> fichero.txt
+velar@sofiav22~/git/libro$git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        fichero.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+velar@sofiav22~/git/libro$git add fichero.txt
+warning: in the working copy of 'fichero.txt', LF will be replaced by CRLF the next time Git touches it
+velar@sofiav22~/git/libro$git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+velar@sofiav22~/git/libro$git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   fichero.txt
+
+velar@sofiav22~/git/libro$git commit -m "[Añadido indice del libro]"
+[master (root-commit) a530355] [Añadido indice del libro]
+ 1 file changed, 3 insertions(+)
+ create mode 100644 fichero.txt
+velar@sofiav22~/git/libro$git status
+On branch master
+nothing to commit, working tree clean
+velar@sofiav22~/git/libro$cat fichero.txt
+Capitulo 1: Introduccion a Git
+Capitulo 2: Flujo de trabajo básico
+Capitulo 3: Repositorios remotos
+velar@sofiav22~/git/libro$echo "Capitulo 4:Repositorios remotos" >>fichero.txt
+velar@sofiav22~/git/libro$cat fichero.txt
+Capitulo 1: Introduccion a Git
+Capitulo 2: Flujo de trabajo básico
+Capitulo 3: Repositorios remotos
+Capitulo 4:Repositorios remotos
+velar@sofiav22~/git/libro$git commit -m "[Añadido capítulo 3 sobre gestión de ramas]"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   fichero.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+velar@sofiav22~/git/libro$cat fichero.txt
+Capitulo 1: Introduccion a Git
+Capitulo 2: Flujo de trabajo básico
+Capitulo 3: Repositorios remotos
+Capitulo 4:Repositorios remotos
+velar@sofiav22~/git/libro$git commit -m "[Añadido capítulo 3 sobre gestión de ramas al índice]"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   fichero.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+velar@sofiav22~/git/libro$cat fichero.txt
+Capitulo 1: Introduccion a Git
+Capitulo 2: Flujo de trabajo básico
+Capitulo 3: Repositorios remotos
+Capitulo 4:Repositorios remotos
+velar@sofiav22~/git/libro$
